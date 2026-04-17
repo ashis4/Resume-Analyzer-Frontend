@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ResumeIQ — AI Resume Analyzer</title>
+
+  <!-- ✅ Correct CSS paths -->
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/navbar.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">✦ AI Powered Resume Analysis</div>
+      <h1>Get Your Resume <span class="highlight">Score</span> in Seconds</h1>
+      <p class="hero-sub">Upload your resume, paste a job description, and get instant AI feedback — scores, keyword gaps, ATS compatibility, and actionable suggestions.</p>
+      
+      <div class="hero-btns">
+        <!-- ✅ FIXED -->
+        <a href="pages/analyzer.html" class="btn-primary">Analyze My Resume</a>
+        <a href="pages/auth.html" class="btn-outline">Create Account</a>
+      </div>
+
+      <p class="hero-note">No sign up required to analyze · Sign up to save reports</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Everything you need to land the job</h2>
+      <div class="features-grid">
+
+        <div class="feature-card card">
+          <div class="feature-icon">📊</div>
+          <h3>Overall Score</h3>
+          <p>Get a score out of 100 based on content quality, structure, and relevance.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">🤖</div>
+          <h3>ATS Compatibility</h3>
+          <p>See how well your resume passes Applicant Tracking Systems.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">🔑</div>
+          <h3>Keyword Analysis</h3>
+          <p>Find missing keywords from job description.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">💡</div>
+          <h3>AI Suggestions</h3>
+          <p>Get actionable improvements.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">🎯</div>
+          <h3>JD Match Score</h3>
+          <p>See how well your resume matches job.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">📁</div>
+          <h3>Save Reports</h3>
+          <p>Track progress with account.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps-grid">
+
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Upload resume</h3>
+          <p>Upload PDF file</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Paste JD</h3>
+          <p>Add job description</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Get Report</h3>
+          <p>Instant AI feedback</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card card">
+        <h2>Ready to improve your resume?</h2>
+        <p>Start analyzing now</p>
+
+        <!-- ✅ FIXED -->
+        <a href="pages/analyzer.html" class="btn-primary">Analyze for Free</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Built by <strong>Ashish Gaikar</strong> · ResumeIQ © 2026</p>
+    </div>
+  </footer>
+
+  <!-- ✅ Correct JS path -->
+  <script src="js/utils.js"></script>
+
+  <script>
+    document.getElementById('navbar').innerHTML = renderNavbar();
+    initTheme();
+  </script>
+
+</body>
+</html>

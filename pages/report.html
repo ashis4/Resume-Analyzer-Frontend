@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ResumeIQ — Your Report</title>
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/navbar.css"/>
+  <link rel="stylesheet" href="../css/report.css"/>
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <div class="report-wrapper">
+    <div class="container">
+
+      <div class="report-header">
+        <h1>Your Resume Report</h1>
+        <p>Here is your detailed AI-powered analysis</p>
+      </div>
+
+      <div id="reportContent">
+
+        <div class="scores-row">
+          <div class="score-card card">
+            <p class="score-label">Overall Score</p>
+            <div class="score-circle" id="overallScoreCircle">
+              <span id="overallScore">--</span>
+            </div>
+          </div>
+          <div class="score-card card">
+            <p class="score-label">ATS Score</p>
+            <div class="score-circle" id="atsScoreCircle">
+              <span id="atsScore">--</span>
+            </div>
+          </div>
+          <div class="score-card card">
+            <p class="score-label">JD Match</p>
+            <div class="score-circle" id="jdScoreCircle">
+              <span id="jdScore">--</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="two-col">
+
+          <div class="card">
+            <h2 class="card-title">Section Scores</h2>
+            <div id="sectionScores"></div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Keyword Analysis</h2>
+            <p class="kw-label">Present</p>
+            <div class="tag-cloud" id="presentKeywords"></div>
+            <p class="kw-label" style="margin-top:16px;">Missing</p>
+            <div class="tag-cloud" id="missingKeywords"></div>
+          </div>
+
+        </div>
+
+        <div class="card suggestions-card">
+          <h2 class="card-title">AI Suggestions</h2>
+          <div id="suggestions"></div>
+        </div>
+
+        <div class="guest-save-banner" id="guestBanner" style="display:none;">
+          <div>
+            <p class="banner-title">Save this report</p>
+            <p class="banner-sub">Create a free account to save all your reports and track your progress over time.</p>
+          </div>
+          <a href="auth.html" class="btn-primary">Sign Up Free</a>
+        </div>
+
+        <div class="report-actions">
+          <a href="analyzer.html" class="btn-outline">Analyze Another Resume</a>
+          <a href="dashboard.html" class="btn-primary" id="dashboardBtn" style="display:none;">Go to Dashboard</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/report.js"></script>
+  <script>
+    document.getElementById('navbar').innerHTML = renderNavbar();
+    initTheme();
+    loadReport();
+  </script>
+
+</body>
+</html>

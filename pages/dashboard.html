@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ResumeIQ — Dashboard</title>
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/navbar.css"/>
+  <link rel="stylesheet" href="../css/dashboard.css"/>
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <div class="dashboard-wrapper">
+    <div class="container">
+
+      <div class="dashboard-header">
+        <div>
+          <h1 id="welcomeMsg">Welcome back!</h1>
+          <p>Here are all your past resume analyses.</p>
+        </div>
+        <a href="analyzer.html" class="btn-primary">+ New Analysis</a>
+      </div>
+
+      <div id="loadingState" class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading your reports...</p>
+      </div>
+
+      <div id="emptyState" class="empty-state" style="display:none;">
+        <div class="empty-icon">📄</div>
+        <h2>No analyses yet</h2>
+        <p>Upload your resume to get your first AI-powered report.</p>
+        <a href="analyzer.html" class="btn-primary">Analyze My Resume</a>
+      </div>
+
+      <div id="analysesGrid" class="analyses-grid" style="display:none;"></div>
+
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script>
+    document.getElementById('navbar').innerHTML = renderNavbar();
+    initTheme();
+    redirectIfGuest();
+    loadDashboard();
+  </script>
+
+</body>
+</html>

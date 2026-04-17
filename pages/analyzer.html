@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ResumeIQ — Analyze Resume</title>
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/navbar.css"/>
+  <link rel="stylesheet" href="../css/analyzer.css"/>
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <div class="analyzer-wrapper">
+    <div class="container">
+
+      <div class="analyzer-header">
+        <h1>Analyze Your Resume</h1>
+        <p>Upload your resume and optionally paste a job description to get a detailed AI report.</p>
+      </div>
+
+      <div class="analyzer-card card">
+
+        <div class="upload-section">
+          <label class="upload-label">Resume (PDF only)</label>
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📄</div>
+            <p class="upload-text">Drag and drop your PDF here</p>
+            <p class="upload-sub">or</p>
+            <button class="btn-outline" onclick="document.getElementById('resumeInput').click()">Browse File</button>
+            <input type="file" id="resumeInput" accept=".pdf" style="display:none" onchange="handleFileSelect(event)"/>
+          </div>
+          <div class="file-selected" id="fileSelected" style="display:none;">
+            <span class="file-icon">📄</span>
+            <span id="fileName"></span>
+            <button class="remove-file" onclick="removeFile()">✕</button>
+          </div>
+        </div>
+
+        <div class="jd-section">
+          <label class="upload-label">Job Description <span class="optional">(optional but recommended)</span></label>
+          <textarea
+            id="jobDescription"
+            rows="6"
+            placeholder="Paste the job description here to get a match score and targeted keyword analysis..."
+          ></textarea>
+        </div>
+
+        <div id="analyzeError" class="error-msg"></div>
+
+        <button class="btn-primary analyze-btn" id="analyzeBtn" onclick="handleAnalyze()">
+          Analyze Resume
+        </button>
+
+        <div class="loading" id="loading" style="display:none;">
+          <div class="spinner"></div>
+          <p>Analyzing your resume with AI — this may take a few seconds...</p>
+        </div>
+
+      </div>
+
+      <div class="guest-note" id="guestNote">
+        <span>💡</span>
+        <p>You are analyzing as a guest. <a href="auth.html">Sign up free</a> to save your reports and track progress.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/analyzer.js"></script>
+  <script>
+    document.getElementById('navbar').innerHTML = renderNavbar();
+    initTheme();
+    if (isLoggedIn()) {
+      document.getElementById('guestNote').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
